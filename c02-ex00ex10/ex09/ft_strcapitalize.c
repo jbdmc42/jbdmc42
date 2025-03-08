@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaobarb <joaobarb@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jbdmc <jbdmc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 15:12:12 by joaobarb          #+#    #+#             */
-/*   Updated: 2025/03/04 11:36:05 by joaobarb         ###   ########.fr       */
+/*   Updated: 2025/03/08 17:36:49 by jbdmc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+/* #include <stdio.h> */
 
 char	*upcase(char *str, int i)
 {
@@ -51,8 +51,8 @@ char	*ft_strcapilatize(char *str)
 	int	i;
 
 	i = 0;
-	aux(str);
-	put_up(str);
+	str = aux(str);
+	str = put_up(str);
 	while (str[i] != '\0')
 	{
 		if (str[i] > 31 && str[i] < 48)
@@ -68,11 +68,15 @@ char	*ft_strcapilatize(char *str)
 	return (str);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
 	char	s[] = "oLa, tudO bem? 42pAlavras quarenta-e-duas; cinquenta+e+um";
-
 	printf("%s\n", s);
 	ft_strcapilatize(s);
-	printf("%s", s);
-}*/
+	printf("%s\n\n", s);
+
+	char	s2[] = "-hello wORLD, how aRe YoU t0dAY? i'm fine ToO.";
+	printf("%s\n", s2);
+	ft_strcapilatize(s2);
+	printf("%s\n", s2);
+} */
