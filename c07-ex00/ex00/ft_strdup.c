@@ -1,5 +1,5 @@
-#include <stdio.h>
-/* #include <stdlib.h> */
+/* #include <stdio.h> */
+#include <stdlib.h>
 
 int	ft_strlen(char *str)
 {
@@ -23,10 +23,8 @@ char	*ft_strdup(char *src)
 	i = 0;
 	len = ft_strlen(src);
 	dup = (char *)malloc(len + 1);
-	if (dup == NULL)
-	{
+	if (!dup)
 		return (NULL);
-	}
 	while (src[i] != '\0')
 	{
 		dup[i] = src[i];
@@ -38,9 +36,13 @@ char	*ft_strdup(char *src)
 
 /* int	main(int argc, char *argv[])
 {
+	char *dup;
+
 	if (argc > 1)
 	{
-		printf("%s", ft_strdup(argv[1]));
+		dup = ft_strdup(argv[1]);
+		printf("%s", dup);
 	}
+	free(dup);
 	return (0);
 } */

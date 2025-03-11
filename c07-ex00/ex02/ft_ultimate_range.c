@@ -1,23 +1,28 @@
 /* #include <stdio.h> */
 #include <stdlib.h>
 
-int	*ft_range(int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int	*range;
 	int	i;
 
 	if (min >= max)
-		return (NULL);
-	range = (int *)malloc((max - min) * sizeof(int));
-	if (!range)
-		return (NULL);
+	{
+		*range = NULL;
+		return (0);
+	}
+	*range = (int *)malloc((max - min) * sizeof(int));
+	if (!*range)
+	{
+		*range = NULL;
+		return (-1);
+	}
 	i = 0;
 	while (i < (max - min))
 	{
-		range[i] = min + i;
+		(*range)[i] = min + i;
 		i++;
 	}
-	return (range);
+	return (max - min);
 }
 
 /* int	ft_atoi(char *str)
@@ -51,6 +56,7 @@ int	main(int argc, char *argv[])
 	int	j;
 	int	arr[2];
 	int *arr2;
+	int size;
 
 	i = 1;
 	j = 0;
@@ -62,8 +68,12 @@ int	main(int argc, char *argv[])
 			i++;
 			j++;
 		}
-		arr2 = ft_range(arr[0], arr[1]);
-		free(arr2);
+		if(ft_ultimate_range(&arr2, arr[0], arr[1]) > 0)
+		{
+			size = ft_ultimate_range(&arr2, arr[0], arr[1]);
+			printf("%d", size);
+			free(arr2);
+		}
 	}
 	return (0);
 } */
